@@ -9,7 +9,14 @@ const app = express();
 
 connectDB();
 
-app.use(cors());
+app.use(
+    cors({
+        origin: [
+            "http://localhost:5500",
+            "https://cross-the-bridge-v20.vercel.app/"
+        ]
+    })
+);
 app.use(express.json());
 
 app.use("/api/users",
