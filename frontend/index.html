@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<title>Cross The Bridge</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="game-shell home-active" id="gameShell">
+    <canvas id="gameCanvas" width="560" height="760"></canvas>
+    <div class="home-screen" id="homeScreen">
+        <div class="home-card">
+            <div class="home-brand">
+                <img class="home-logo" src="assets/logo.png" alt="Cross The Bridge logo">
+                <p class="home-kicker">Arcade Challenge</p>
+                <h1 class="home-title">Cross The Bridge</h1>
+                <p class="home-subtitle">Trust your guts, and make it across without stepping on the wrong glass.</p>
+            </div>
+            <div class="rules-panel">
+                <h2 class="rules-title">How to Play</h2>
+                <ol class="rules-list">
+                    <li>Connect Your Wallet</li>
+                    <li>Each row has two glass tiles, but only one is safe.</li>
+                    <li>Tap one tile in the highlighted front row to jump forward.</li>
+                    <li>If you pick the wrong tile, it breaks and the run ends instantly.</li>
+                    <li>You get 2 pebbles. Tap <strong>PEB</strong>, then tap a front tile to test it from a distance.</li>
+                    <li>A safe tile is marked for you. A wrong test costs a pebble.</li>
+                    <li>Reach the finish platform to win, 100 points on every win.</li>
+                    <li>Collect 1000 points to redeem 10 Tokens.</li>
+                </ol>
+            </div>
+            <button class="play-button" id="playButton" type="button">Play</button>
+        </div>
+    </div>
+    <div class="wallet-modal hidden" id="walletModal">
+        <div class="wallet-card">
+            <h2>Wallet Connection</h2>
+            <p>
+                Connect your wallet
+                to start playing.
+            </p>
+            <button id="metaMaskBtn">
+                Connect Wallet
+            </button>
+        </div>
+    </div>
+    <div class="player-stats">
+        <p id="pointsText">
+            Points: 0
+        </p>
+        <p id="winsText">
+            Wins: 0
+        </p>
+    </div>
+    <div class="transaction-toast hidden" id="transactionToast" role="status" aria-live="polite">
+        <div class="transaction-spinner" id="transactionSpinner"></div>
+        <div class="transaction-copy">
+            <strong id="transactionTitle">Transaction pending</strong>
+            <span id="transactionDetail">Confirming your redemption...</span>
+        </div>
+    </div>
+    <div class="invite-modal hidden" id="inviteModal">
+        <div class="invite-card">
+            <button class="invite-close" id="inviteCloseBtn" type="button" aria-label="Close invite dialog">×</button>
+            <h2>Invite a Friend</h2>
+            <p>Share this link with a friend.</p>
+            <div class="invite-link-row">
+                <input id="inviteLinkInput" type="text" readonly value="">
+                <button id="inviteCopyBtn" type="button">Copy</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.1/dist/ethers.umd.min.js"></script>
+<script src="config.js"></script>
+<script src="api.js"></script>
+<script src="wallet.js"></script>
+<script src="game.js"></script>
+
+</body>
+</html>
+
