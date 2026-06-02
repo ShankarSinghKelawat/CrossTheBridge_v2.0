@@ -13,8 +13,9 @@ app.use(
     cors({
         origin: [
             "http://localhost:5500",
-            "https://cross-the-bridge-v20.vercel.app/"
-        ]
+            "https://cross-the-bridge-v20.vercel.app"
+        ],
+        credentials: true
     })
 );
 app.use(express.json());
