@@ -11,10 +11,7 @@ connectDB();
 
 app.use(
     cors({
-        origin: [
-            "http://localhost:5500",
-            "https://cross-the-bridge-v20.vercel.app"
-        ],
+        origin: true,
         credentials: true
     })
 );
